@@ -14,6 +14,6 @@ jobs:
           fetch-depth: 2
       - name: Trigger per change
         run: |
-           git diff --name-only HEAD HEAD^1 | grep '^test/*.ini$' | while read -r line; do echo "$line"; gh workflow run "multiple-run" --ref main ;done
+           git diff --name-only HEAD HEAD^1 | grep '^test/.*.ini$' | while read -r line; do echo "$line"; gh workflow run "multiple-run" --ref main ;done
 
 
